@@ -201,7 +201,8 @@ class StatusItemViewModel {
                     offsetX += icon.size.width + spacing
                 }
                 if let title {
-                    let offsetY = (size.height - title.size().height) / 2
+                    // Match the optical center of neighboring system menu bar icons.
+                    let offsetY = (size.height - title.size().height) / 2 - 0.75
                     title.draw(at: .init(x: offsetX, y: offsetY))
                 }
                 return true
